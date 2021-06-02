@@ -64,7 +64,7 @@ class Login : AppCompatActivity() {
             return
         } else {
             if (fg.validarEmail(userLogin.text.toString()) == true) {
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(userLogin.text.toString(), StringEncryption.SHA1(passLogin.text.toString())).addOnCompleteListener {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(userLogin.text.toString().trim(), StringEncryption.SHA1(passLogin.text.toString().trim())).addOnCompleteListener {
                     if (it.isSuccessful) {
                         val sqluser = "insert or ignore into users (email , encrypted_password,login_online)" +
                                 " values ('" + userLogin.text.toString() + "' , " +
