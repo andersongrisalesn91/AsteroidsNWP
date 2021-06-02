@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="0.5dp"
+    android:background="@drawable/fondosmi"
+    android:padding="1dp">
+
+
+    <TextView
+        android:id="@+id/TVAtributoT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@id/TVValorUT"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Atributo:"
+        android:textAlignment="textStart"
+        android:textColor="#7591FF"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/TVAtributoC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TVAtributoT"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/TVValorUT"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:padding="1dp"
+        android:text="Atributo - Item"
+        android:textColor="@color/blanco_transparente"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/TVValorUT"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Valor :"
+        android:textAlignment="viewStart"
+        android:textColor="#7591FF"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/TVValorU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TVValorUT"
+        android:layout_alignStart="@+id/TVValorUT"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="0000000"
+        android:textAlignment="viewStart"
+        android:textColor="@color/blanco_transparente"
+        android:textSize="10sp" />
+
+</RelativeLayout>

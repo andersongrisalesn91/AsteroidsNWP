@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "579580404747",
+    "firebase_url": "https://asteroidslp.firebaseio.com",
+    "project_id": "asteroidslp",
+    "storage_bucket": "asteroidslp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579580404747:android:3ec4e69591e460df13530e",
+        "android_client_info": {
+          "package_name": "com.agndesarrollos.asteroidsnw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579580404747-a34g2lgpph6k6pnm710rhahhgssqo3d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agndesarrollos.asteroidsnw",
+            "certificate_hash": "b0713576b0833889f29eae2e104acbbb756efb39"
+          }
+        },
+        {
+          "client_id": "579580404747-0c1nrr477cjdamnlomis2gm47acjhfrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmcVTGp8r4hDfJ4e6g_fKa0d1BIf1-0po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579580404747-0c1nrr477cjdamnlomis2gm47acjhfrv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
