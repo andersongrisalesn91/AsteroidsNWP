@@ -62,23 +62,25 @@ class Login : AppCompatActivity() {
         if (userLogin.text.isEmpty() || passLogin.text.isEmpty()) {
             Toast.makeText(this, "Debe Ingresar el Usuario y la contraseña para Registrarse", Toast.LENGTH_SHORT).show()
             return
-        } else {
-            if (fg.validarEmail(userLogin.text.toString()) == true) {
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(userLogin.text.toString().trim(), StringEncryption.SHA1(passLogin.text.toString().trim())).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val sqluser = "insert or ignore into users (email , encrypted_password,login_online)" +
-                                " values ('" + userLogin.text.toString() + "' , " +
-                                "'" + StringEncryption.SHA1(passLogin.text.toString()) + "' ,1);"
-                        val operaciones = OperacionesBDInterna(this)
-                        operaciones.queryNoData(sqluser)
-                        IngresoCompletado(1)
-                    } else {
-                        Toast.makeText(baseContext, "Logeo Fallido, verifique los datos e intentelo nuevamente, si no esta registrado, registrese primero.",
-                                Toast.LENGTH_LONG).show()
-                    }
+        }
+        if (fg.validarEmail(userLogin.text.toString().trim())) {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(userLogin.text.toString().trim(), StringEncryption.SHA1(passLogin.text.toString().trim())).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val sqluser = "insert or ignore into users (email , encrypted_password,login_online)" +
+                            " values ('" + userLogin.text.toString().trim() + "' , " +
+                            "'" + StringEncryption.SHA1(passLogin.text.toString().trim()) + "' ,1);"
+                    val operaciones = OperacionesBDInterna(this)
+                    operaciones.queryNoData(sqluser)
+                    IngresoCompletado(1)
+                } else {
+                    Toast.makeText(baseContext, "Logeo Fallido, verifique los datos e intentelo nuevamente, si no esta registrado, registrese primero.",
+                            Toast.LENGTH_LONG).show()
                 }
             }
+        } else {
+            Toast.makeText(this, "Correo invalido", Toast.LENGTH_SHORT).show()
         }
+
 
     }
 
@@ -90,7 +92,7 @@ class Login : AppCompatActivity() {
             Toast.makeText(this, "Debe Ingresar el Usuario y la contraseña para ingresar", Toast.LENGTH_SHORT).show()
             return
         }
-        if (!fg.validarEmail(userLogin.text.toString()) == true) {
+        if (!fg.validarEmail(userLogin.text.toString())) {
             Toast.makeText(this, "Correo invalido", Toast.LENGTH_SHORT).show()
             return
         }
@@ -121,7 +123,7 @@ class Login : AppCompatActivity() {
             Toast.makeText(this, "Debe Ingresar el Usuario y la contraseña para Registrarse", Toast.LENGTH_SHORT).show()
             return
         }
-        if (!fg.validarEmail(userLogin.text.toString()) == true) {
+        if (!fg.validarEmail(userLogin.text.toString())) {
             Toast.makeText(this, "Correo invalido", Toast.LENGTH_SHORT).show()
             return
         }
@@ -130,8 +132,8 @@ class Login : AppCompatActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(userLogin.text.toString().trim(), StringEncryption.SHA1(passLogin.text.toString().trim())).addOnCompleteListener {
                 if (it.isSuccessful) {
                     val sqluser = "insert or ignore into users (email , encrypted_password,login_online)" +
-                            " values ('" + userLogin.text.toString() + "' , " +
-                            "'" + StringEncryption.SHA1(passLogin.text.toString()) + "' ,1);"
+                            " values ('" + userLogin.text.toString().trim() + "' , " +
+                            "'" + StringEncryption.SHA1(passLogin.text.toString().trim()) + "' ,1);"
                     val operaciones = OperacionesBDInterna(this)
                     operaciones.queryNoData(sqluser)
                     IngresoCompletado(1)

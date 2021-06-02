@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 
-public class FuncionesGenerales extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class FuncionesGenerales extends AppCompatActivity {
 
     ConsultaGeneral conGen = new ConsultaGeneral();
     OperacionesBDInterna operaciones;
@@ -34,18 +34,6 @@ public class FuncionesGenerales extends AppCompatActivity implements PopupMenu.O
     public FuncionesGenerales(Context contexto) {
         this.contexto = contexto;
         this.operaciones = new OperacionesBDInterna(contexto);
-    }
-
-    public String pantallaactual() {
-        String pact = "";
-        String queryCli = "SELECT va FROM PA WHERE pa='ultP'";
-        ArrayList<String>[] objeto = conGen.queryObjeto2val(contexto, queryCli, null);
-        if ((objeto == null) || (objeto.length < 1)) {
-            return null;
-        } else {
-            pact = objeto[0].get(0);
-        }
-        return pact;
     }
 
     public Map<String, Object> getparametros() {
@@ -95,20 +83,6 @@ public class FuncionesGenerales extends AppCompatActivity implements PopupMenu.O
         }
     }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu1:
-                return true;
-            case R.id.menu2:
-                return true;
-            case R.id.menu3:
-                operaciones.queryNoData("UPDATE ACT SET VAL='" + pantallaactual() + "' WHERE VA='PANT'");
-                return true;
-        }
-        return false;
-    }
-
     public String fechaActual(int acc) {
         String fecha = "";
         if (acc == 1) {
@@ -153,27 +127,6 @@ public class FuncionesGenerales extends AppCompatActivity implements PopupMenu.O
     public boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
-    }
-
-    public void Ir(String pantalla) {
-        Intent p;
-        switch(pantalla){
-            case "Login":
-                try{
-                    FirebaseAuth.getInstance().signOut();
-                }catch (Exception e){
-                    Log.d("Error:",e.getMessage().toString());
-                }
-                return;
-            case "MisAsteroides":
-                p = new Intent(this, AsteroidesActivity.class);
-                startActivity(p);
-                break;
-            case "DesAtributos":
-                p = new Intent(this, DesAsteroideActivity.class);
-                startActivity(p);
-                break;
-        }
     }
 
 }

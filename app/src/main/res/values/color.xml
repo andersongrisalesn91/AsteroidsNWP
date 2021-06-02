@@ -3,22 +3,7 @@
     <color name="colorPrimary">#4c42ab</color>
     <color name="colorPrimaryDark">#453aab</color>
     <color name="colorAccent">#8ab140</color>
-    <color name="light_gray">#7eaaaaaa</color>
-    <color name="lighter_gray">#06aaaaaa</color>
-    <color name="light_gray2">#a5a5a5</color>
-    <color name="light_green">#7A8AB140</color>
-    <color name="light_purple">#e2713bc9</color>
     <color name="white">#ffffff</color>
-    <color name="light_gray3">#4caaaaaa</color>
-    <color name="light_gray_prog">#EBAAAAAA</color>
-    <color name="fondo_popup">#c88dce48</color>
     <color name="blanco_transparente">#d2ffffff</color>
-    <color name="azul_lista1">#4375ff</color>
-    <color name="azul_lista2">#3f48cc</color>
-    <color name="ligth_purple_claro">#ad713bc9</color>
     <color name="blanco_fondopop">#83FFFFFF</color>
-    <color name="azulletras">#9FACD6</color>
-    <color name="azulclaro">#9FACD6</color>
-    <color name="blanco_opacidad50">#50FFFFFF</color>
-    <color name="Azul_claro1">#4375FF</color>
 </resources>

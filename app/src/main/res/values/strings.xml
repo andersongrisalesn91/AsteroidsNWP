@@ -1,14 +1,5 @@
 <resources>
     <string name="app_name">AsteroidsNW</string>
-    <string name="volver">Volver</string>
     <string name="confirmar">Confirmar</string>
-    <string name="continuar_reg">Desea continuar el proceso de registro</string>
     <string name="informacion_consulta">Ingrese la fecha para consultar los asteroides que se acercan a la tierra:</string>
-    <string-array name="tipoid">
-        <item>Seleccionar tipo</item>
-        <item>Cedula de ciudadania</item>
-        <item>Cedula de extrangeria</item>
-        <item>NIT</item>
-        <item>RUT</item>
-    </string-array>
 </resources>
